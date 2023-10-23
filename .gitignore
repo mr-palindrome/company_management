@@ -1,0 +1,13 @@
+__pycache__/
+.vscode
+env/*
+env.txt
+env.sh
+env
+env.bat
+.env
+.bash_profile
+/static
+static/
+static/*
+static

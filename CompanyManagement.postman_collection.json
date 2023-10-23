@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "b268df54-526e-4ccd-9eb8-18dc18e58523",
+		"name": "CompanyManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16223691"
+	},
+	"item": [
+		{
+			"name": "generate-token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "List Company",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/companies/"
+			},
+			"response": []
+		},
+		{
+			"name": "Company Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/companies/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comapny",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"company_name\": \"DoctousTech\",\n      \"company_ceo\": \"Founder\",\n      \"company_address\": \"India\",\n      \"inception_Date\": \"2020-06-03\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/company/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Company",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}/delete-company/e84a45c7-7fa4-40e9-b9f7-72c42ef91aa8/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Company",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_name\": \"Decoustech-NZ\",\n    \"company_ceo\": \"Fuonder\",\n    \"company_address\": \"NZ\",\n    \"inception_Date\": \"2020-06-03\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/company/aa0f79cd-a914-4e44-8ce9-7c6f4aad3d98/"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000/api/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MDczNzc1LCJpYXQiOjE2OTgwNzAxNzUsImp0aSI6IjNjM2RlODYxYWEwYjRlMDJiNzQxNzY1NTU5ZjI3ZmIxIiwidXNlcl9pZCI6MX0.34eLsPxJNxD_ea5AUUNpxQBszO1aszRsWsIKyBfs69c",
+			"type": "string"
+		}
+	]
+}
